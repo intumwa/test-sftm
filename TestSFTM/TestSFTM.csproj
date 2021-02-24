@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\source\repos\lssol\sftm-csharp\tree-matching-csharp.Benchmark\tree-matching-csharp.Benchmark.csproj" />
+    <ProjectReference Include="..\..\..\..\..\source\repos\lssol\sftm-csharp\tree-matching-csharp\tree-matching-csharp.csproj" />
+  </ItemGroup>
+
+</Project>
