@@ -1,12 +1,7 @@
-﻿using MoreLinq;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using tree_matching_csharp;
-using tree_matching_csharp.Benchmark;
 
 namespace TestSFTM
 {
@@ -56,19 +51,29 @@ namespace TestSFTM
 
             foreach (var edge in edges)
             {
-                var s = "";
+                string s = "";
                 if (edge.Source != null)
-                    s = edge.Source.Value[0];
+                    s = edge.Source.NodeSignature;
                 else
                     s = "-";
 
-                var t = "";
+                string t = "";
                 if (edge.Target != null)
-                    t = edge.Target.Value[0];
+                    t = edge.Target.NodeSignature;
                 else
                     t = "-";
 
-                Console.WriteLine("{0} | {1}", s, t);
+                string change = "";
+                if (s.Equals(t))
+                    change = "[X]";
+                else if (!s.Equals("-") && t.Equals("-"))
+                    change = "[D]";
+                else if (s.Equals("-") && !t.Equals("-"))
+                    change = "[I]";
+                else
+                    change = "[C]";
+
+                Console.WriteLine("{0} | {1} => {2}", change, s, t);
 
 
             }
